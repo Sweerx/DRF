@@ -8,9 +8,9 @@ env.read_env()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-SECRET_KEY = 'django-insecure-s+6q_i_s-yjiegqltv1h6^1u4fi5)g_t1^4$wu11l6e#p+nnqx'
+SECRET_KEY = env.str("SECRET_KEY")
 
-DEBUG = True
+DEBUG = env.bool("DEBUG")
 
 ALLOWED_HOSTS = []
 
@@ -123,13 +123,5 @@ EMAIL_HOST_PASSWORD = env.str('EMAIL_HOST_PASSWORD')
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 SERVER_EMAIL = EMAIL_HOST_USER
 
-CACHE_ENABLE = True
-if CACHE_ENABLE:
-    CACHES = {
-        'default': {
-            'BACKEND': 'django_redis.cache.RedisCache',
-            'LOCATION': 'redis://localhost:6379/1',
-        }
-    }
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
