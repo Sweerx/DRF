@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth import get_user_model
 
 from materials.models import Course, Lesson
 
@@ -28,7 +29,7 @@ class Payment(models.Model):
     amount = models.FloatField(verbose_name="Сумма оплаты")
     payment_method = models.CharField(max_length=25, choices=PAYMENT_METHODS, verbose_name="Способ оплаты")
     payment_date = models.DateField(auto_now_add=True, verbose_name="Дата платежа")
-    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name="Пользователь", null=True, blank=True, related_name="payments")
+    owner = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, verbose_name="Пользователь", null=True, blank=True, related_name="payments")
     course = models.ForeignKey(Course, on_delete=models.CASCADE, verbose_name="Оплаченный курс", null=True, blank=True, related_name="payments")
     lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE, verbose_name="Оплаченный урок", null=True, blank=True, related_name="payments")
 
