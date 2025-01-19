@@ -1,3 +1,4 @@
+from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.contrib.auth import get_user_model
 
@@ -7,7 +8,7 @@ PAYMENT_METHODS = [("cash", "Наличные"),
                    ("transfer_to_account", "Перевод на счет")]
 
 
-class User(models.Model):
+class User(AbstractUser):
     email = models.EmailField(unique=True, verbose_name="Email")
     username = models.CharField(max_length=25, verbose_name="Ник пользователя", null=True, blank=True)
     phone_number = models.CharField(max_length=15, verbose_name="Телефон", null=True, blank=True)
