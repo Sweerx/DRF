@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 from environs import Env
+from datetime import timedelta
 
 env = Env()
 env.read_env()
@@ -26,6 +27,7 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'django_filters',
+    'rest_framework_simplejwt',
     'users',
     'materials',
 ]
@@ -126,3 +128,15 @@ SERVER_EMAIL = EMAIL_HOST_USER
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication'],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated']
+}
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=180),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1)}
+
