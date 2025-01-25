@@ -1,7 +1,5 @@
 from django.contrib import admin
-from .models import Course, Lesson
-from users.models import Payment
-
+from .models import Course, Lesson, Payment
 
 
 @admin.register(Course)

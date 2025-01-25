@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Course, Lesson, Subscription
+from .models import Course, Lesson, Subscription, Payment
 from .validators import YoutubeLinkValidator
 
 
@@ -54,3 +54,13 @@ class StaffCourseSerializer(CourseSerializer):
     """
     lessons_count = serializers.SerializerMethodField()
     course_lessons = LessonSerializer(source="lessons", many=True, read_only=True)
+
+
+class PaymentSerializer(serializers.ModelSerializer):
+    """
+    Сериализатор для списка объектов модели Payment
+    """
+
+    class Meta:
+        model = Payment
+        fields = "__all__"
