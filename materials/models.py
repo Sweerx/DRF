@@ -1,3 +1,4 @@
+from django.contrib.auth import get_user_model
 from django.db import models
 
 
@@ -28,3 +29,18 @@ class Lesson(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Subscription(models.Model):
+    is_active = models.BooleanField(verbose_name="Активна", default=True)
+    owner = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, verbose_name="Пользователь",
+                              related_name="subscriptions")
+    course = models.ForeignKey(Course, on_delete=models.CASCADE, verbose_name="Курс", related_name="subscriptions")
+    created_at = models.DateField(verbose_name="Дата активации", auto_now_add=True)
+
+    class Meta:
+        verbose_name = "Подписка"
+        verbose_name_plural = "Подписки"
+
+    def __str__(self):
+        return f"Подписка пользователя {self.owner.name} на курс {self.course.name} от {self.created_at}"

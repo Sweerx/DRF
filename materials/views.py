@@ -2,10 +2,12 @@ from rest_framework import generics, viewsets
 from rest_framework.permissions import IsAdminUser
 from django.contrib.auth.models import Group
 
-from .models import Course, Lesson
-from .serializers import CourseSerializer, LessonSerializer, StaffCourseSerializer
+from .models import Course, Lesson, Subscription
+from .paginators import LessonPaginator
+from .serializers import CourseSerializer, LessonSerializer, StaffCourseSerializer, SubscriptionSerializer
 from src.utils import get_queryset_for_owner
 from users.permissions import IsModerator, IsOwner
+
 
 class CourseViewSet(viewsets.ModelViewSet):
     queryset = Course.objects.all()
@@ -39,6 +41,8 @@ class CourseViewSet(viewsets.ModelViewSet):
 class LessonListCreateAPIView(generics.ListCreateAPIView):
     queryset = Lesson.objects.all()
     serializer_class = LessonSerializer
+    pagination_class = LessonPaginator
+
 
     def get_permissions(self):
         if self.request.method == "POST":
@@ -63,4 +67,38 @@ class LessonRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
             self.permission_classes = [IsOwner | IsModerator | IsAdminUser]
         elif self.request.method == "DELETE":
             self.permission_classes = [IsOwner | IsAdminUser]
+        return super().get_permissions()
+
+
+class SubscriptionListCreateAPIView(generics.ListCreateAPIView):
+    queryset = Subscription.objects.all()
+    serializer_class = SubscriptionSerializer
+
+    def get_permissions(self):
+        """
+        Выдача разрешений в зависимости от статуса пользователя
+        """
+        if self.request.method == "POST":
+            self.permission_classes = [IsModerator | IsAdminUser]
+        return super().get_permissions()
+
+    def get_queryset(self):
+        """
+        Подбор списка объектов в зависимости от статуса пользователя
+        """
+        return get_queryset_for_owner(self.request.user, self.queryset)
+
+
+class SubscriptionRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Subscription.objects.all()
+    serializer_class = SubscriptionSerializer
+
+    def get_permissions(self):
+        """
+        Выдача разрешений в зависимости от статуса пользователя
+        """
+        if self.request.method == "GET":
+            self.permission_classes = [IsOwner | IsModerator | IsAdminUser]
+        elif self.request.method in ["PATCH", "PUT", "DELETE"]:
+            self.permission_classes = [IsModerator | IsAdminUser]
         return super().get_permissions()
