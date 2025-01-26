@@ -3,7 +3,7 @@ from rest_framework.permissions import IsAdminUser
 from django.contrib.auth.models import Group
 
 from .models import Course, Lesson, Subscription
-from .paginators import LessonPaginator
+from .paginators import LessonPaginator, CoursePaginator
 from .serializers import CourseSerializer, LessonSerializer, StaffCourseSerializer, SubscriptionSerializer
 from src.utils import get_queryset_for_owner
 from users.permissions import IsModerator, IsOwner
@@ -12,6 +12,7 @@ from users.permissions import IsModerator, IsOwner
 class CourseViewSet(viewsets.ModelViewSet):
     queryset = Course.objects.all()
     serializer_class = CourseSerializer
+    pagination_class = CoursePaginator
 
     def get_permissions(self):
         if self.action == "create":
