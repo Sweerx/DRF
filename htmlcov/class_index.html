@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Coverage report</title>
+    <link rel="icon" sizes="32x32" href="favicon_32_cb_58284776.png">
+    <link rel="stylesheet" href="style_cb_718ce007.css" type="text/css">
+    <script src="coverage_html_cb_497bf287.js" defer></script>
+</head>
+<body class="indexfile">
+<header>
+    <div class="content">
+        <h1>Coverage report:
+            <span class="pc_cov">79%</span>
+        </h1>
+        <aside id="help_panel_wrapper">
+            <input id="help_panel_state" type="checkbox">
+            <label for="help_panel_state">
+                <img id="keyboard_icon" src="keybd_closed_cb_ce680311.png" alt="Show/hide keyboard shortcuts">
+            </label>
+            <div id="help_panel">
+                <p class="legend">Shortcuts on this page</p>
+                <div class="keyhelp">
+                    <p>
+                        <kbd>f</kbd>
+                        <kbd>n</kbd>
+                        <kbd>s</kbd>
+                        <kbd>m</kbd>
+                        <kbd>x</kbd>
+                        <kbd>c</kbd>
+                        &nbsp; change column sorting
+                    </p>
+                    <p>
+                        <kbd>[</kbd>
+                        <kbd>]</kbd>
+                        &nbsp; prev/next file
+                    </p>
+                    <p>
+                        <kbd>?</kbd> &nbsp; show/hide this help
+                    </p>
+                </div>
+            </div>
+        </aside>
+        <form id="filter_container">
+            <input id="filter" type="text" value="" placeholder="filter...">
+            <div>
+                <input id="hide100" type="checkbox" >
+                <label for="hide100">hide covered</label>
+            </div>
+        </form>
+        <h2>
+                <a class="button" href="index.html">Files</a>
+                <a class="button" href="function_index.html">Functions</a>
+                <a class="button current">Classes</a>
+        </h2>
+        <p class="text">
+            <a class="nav" href="https://coverage.readthedocs.io/en/7.6.10">coverage.py v7.6.10</a>,
+            created at 2025-01-25 15:26 +0300
+        </p>
+    </div>
+</header>
+<main id="index">
+    <table class="index" data-sortable>
+        <thead>
+            <tr class="tablehead" title="Click to sort">
+                <th id="file" class="name left" aria-sort="none" data-shortcut="f">File<span class="arrows"></span></th>
+                <th id="region" class="name left" aria-sort="none" data-default-sort-order="ascending" data-shortcut="n">class<span class="arrows"></span></th>
+                <th id="statements" aria-sort="none" data-default-sort-order="descending" data-shortcut="s">statements<span class="arrows"></span></th>
+                <th id="missing" aria-sort="none" data-default-sort-order="descending" data-shortcut="m">missing<span class="arrows"></span></th>
+                <th id="excluded" aria-sort="none" data-default-sort-order="descending" data-shortcut="x">excluded<span class="arrows"></span></th>
+                <th id="coverage" class="right" aria-sort="none" data-shortcut="c">coverage<span class="arrows"></span></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="region">
+                <td class="name left"><a href="z_7f9b1f3b1984166a___init___py.html">conf\__init__.py</a></td>
+                <td class="name left"><a href="z_7f9b1f3b1984166a___init___py.html"><data value=''><span class='no-noun'>(no class)</span></data></a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_7f9b1f3b1984166a_asgi_py.html">conf\asgi.py</a></td>
+                <td class="name left"><a href="z_7f9b1f3b1984166a_asgi_py.html"><data value=''><span class='no-noun'>(no class)</span></data></a></td>
+                <td>4</td>
+                <td>4</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 4">0%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_7f9b1f3b1984166a_settings_py.html">conf\settings.py</a></td>
+                <td class="name left"><a href="z_7f9b1f3b1984166a_settings_py.html"><data value=''><span class='no-noun'>(no class)</span></data></a></td>
+                <td>41</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="41 41">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_7f9b1f3b1984166a_urls_py.html">conf\urls.py</a></td>
+                <td class="name left"><a href="z_7f9b1f3b1984166a_urls_py.html"><data value=''><span class='no-noun'>(no class)</span></data></a></td>
+                <td>3</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="3 3">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_7f9b1f3b1984166a_wsgi_py.html">conf\wsgi.py</a></td>
+                <td class="name left"><a href="z_7f9b1f3b1984166a_wsgi_py.html"><data value=''><span class='no-noun'>(no class)</span></data></a></td>
+                <td>4</td>
+                <td>4</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 4">0%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="manage_py.html">manage.py</a></td>
+                <td class="name left"><a href="manage_py.html"><data value=''><span class='no-noun'>(no class)</span></data></a></td>
+                <td>11</td>
+                <td>2</td>
+                <td>0</td>
+                <td class="right" data-ratio="9 11">82%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f978324627c06562___init___py.html">materials\__init__.py</a></td>
+                <td class="name left"><a href="z_f978324627c06562___init___py.html"><data value=''><span class='no-noun'>(no class)</span></data></a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f978324627c06562_admin_py.html#t6">materials\admin.py</a></td>
+                <td class="name left"><a href="z_f978324627c06562_admin_py.html#t6"><data value='CourseAdmin'>CourseAdmin</data></a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f978324627c06562_admin_py.html#t11">materials\admin.py</a></td>
+                <td class="name left"><a href="z_f978324627c06562_admin_py.html#t11"><data value='LessonAdmin'>LessonAdmin</data></a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f978324627c06562_admin_py.html#t16">materials\admin.py</a></td>
+                <td class="name left"><a href="z_f978324627c06562_admin_py.html#t16"><data value='PaymentAdmin'>PaymentAdmin</data></a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f978324627c06562_admin_py.html">materials\admin.py</a></td>
+                <td class="name left"><a href="z_f978324627c06562_admin_py.html"><data value=''><span class='no-noun'>(no class)</span></data></a></td>
+                <td>11</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="11 11">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f978324627c06562_apps_py.html#t4">materials\apps.py</a></td>
+                <td class="name left"><a href="z_f978324627c06562_apps_py.html#t4"><data value='MaterialsConfig'>MaterialsConfig</data></a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f978324627c06562_apps_py.html">materials\apps.py</a></td>
+                <td class="name left"><a href="z_f978324627c06562_apps_py.html"><data value=''><span class='no-noun'>(no class)</span></data></a></td>
+                <td>4</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="4 4">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_2484c951eaf88dd9_0001_initial_py.html#t7">materials\migrations\0001_initial.py</a></td>
+                <td class="name left"><a href="z_2484c951eaf88dd9_0001_initial_py.html#t7"><data value='Migration'>Migration</data></a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_2484c951eaf88dd9_0001_initial_py.html">materials\migrations\0001_initial.py</a></td>
+                <td class="name left"><a href="z_2484c951eaf88dd9_0001_initial_py.html"><data value=''><span class='no-noun'>(no class)</span></data></a></td>
+                <td>6</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="6 6">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_2484c951eaf88dd9_0002_course_owner_lesson_owner_alter_lesson_course_and_more_py.html#t8">materials\migrations\0002_course_owner_lesson_owner_alter_lesson_course_and_more.py</a></td>
+                <td class="name left"><a href="z_2484c951eaf88dd9_0002_course_owner_lesson_owner_alter_lesson_course_and_more_py.html#t8"><data value='Migration'>Migration</data></a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_2484c951eaf88dd9_0002_course_owner_lesson_owner_alter_lesson_course_and_more_py.html">materials\migrations\0002_course_owner_lesson_owner_alter_lesson_course_and_more.py</a></td>
+                <td class="name left"><a href="z_2484c951eaf88dd9_0002_course_owner_lesson_owner_alter_lesson_course_and_more_py.html"><data value=''><span class='no-noun'>(no class)</span></data></a></td>
+                <td>6</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="6 6">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_2484c951eaf88dd9___init___py.html">materials\migrations\__init__.py</a></td>
+                <td class="name left"><a href="z_2484c951eaf88dd9___init___py.html"><data value=''><span class='no-noun'>(no class)</span></data></a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f978324627c06562_models_py.html#t10">materials\models.py</a></td>
+                <td class="name left"><a href="z_f978324627c06562_models_py.html#t10"><data value='Course'>Course</data></a></td>
+                <td>1</td>
+                <td>1</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 1">0%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f978324627c06562_models_py.html#t17">materials\models.py</a></td>
+                <td class="name left"><a href="z_f978324627c06562_models_py.html#t17"><data value='Meta'>Course.Meta</data></a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f978324627c06562_models_py.html#t25">materials\models.py</a></td>
+                <td class="name left"><a href="z_f978324627c06562_models_py.html#t25"><data value='Lesson'>Lesson</data></a></td>
+                <td>1</td>
+                <td>1</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 1">0%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f978324627c06562_models_py.html#t35">materials\models.py</a></td>
+                <td class="name left"><a href="z_f978324627c06562_models_py.html#t35"><data value='Meta'>Lesson.Meta</data></a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f978324627c06562_models_py.html#t43">materials\models.py</a></td>
+                <td class="name left"><a href="z_f978324627c06562_models_py.html#t43"><data value='Payment'>Payment</data></a></td>
+                <td>1</td>
+                <td>1</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 1">0%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f978324627c06562_models_py.html#t60">materials\models.py</a></td>
+                <td class="name left"><a href="z_f978324627c06562_models_py.html#t60"><data value='Meta'>Payment.Meta</data></a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f978324627c06562_models_py.html#t68">materials\models.py</a></td>
+                <td class="name left"><a href="z_f978324627c06562_models_py.html#t68"><data value='Subscription'>Subscription</data></a></td>
+                <td>1</td>
+                <td>1</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 1">0%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f978324627c06562_models_py.html#t75">materials\models.py</a></td>
+                <td class="name left"><a href="z_f978324627c06562_models_py.html#t75"><data value='Meta'>Subscription.Meta</data></a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f978324627c06562_models_py.html">materials\models.py</a></td>
+                <td class="name left"><a href="z_f978324627c06562_models_py.html"><data value=''><span class='no-noun'>(no class)</span></data></a></td>
+                <td>47</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="47 47">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f978324627c06562_paginators_py.html#t4">materials\paginators.py</a></td>
+                <td class="name left"><a href="z_f978324627c06562_paginators_py.html#t4"><data value='CoursePaginator'>CoursePaginator</data></a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f978324627c06562_paginators_py.html#t13">materials\paginators.py</a></td>
+                <td class="name left"><a href="z_f978324627c06562_paginators_py.html#t13"><data value='LessonPaginator'>LessonPaginator</data></a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f978324627c06562_paginators_py.html">materials\paginators.py</a></td>
+                <td class="name left"><a href="z_f978324627c06562_paginators_py.html"><data value=''><span class='no-noun'>(no class)</span></data></a></td>
+                <td>9</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="9 9">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f978324627c06562_serializers_py.html#t7">materials\serializers.py</a></td>
+                <td class="name left"><a href="z_f978324627c06562_serializers_py.html#t7"><data value='LessonSerializer'>LessonSerializer</data></a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f978324627c06562_serializers_py.html#t8">materials\serializers.py</a></td>
+                <td class="name left"><a href="z_f978324627c06562_serializers_py.html#t8"><data value='Meta'>LessonSerializer.Meta</data></a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f978324627c06562_serializers_py.html#t14">materials\serializers.py</a></td>
+                <td class="name left"><a href="z_f978324627c06562_serializers_py.html#t14"><data value='SubscriptionSerializer'>SubscriptionSerializer</data></a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f978324627c06562_serializers_py.html#t15">materials\serializers.py</a></td>
+                <td class="name left"><a href="z_f978324627c06562_serializers_py.html#t15"><data value='Meta'>SubscriptionSerializer.Meta</data></a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f978324627c06562_serializers_py.html#t20">materials\serializers.py</a></td>
+                <td class="name left"><a href="z_f978324627c06562_serializers_py.html#t20"><data value='CourseSerializer'>CourseSerializer</data></a></td>
+                <td>5</td>
+                <td>5</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 5">0%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f978324627c06562_serializers_py.html#t25">materials\serializers.py</a></td>
+                <td class="name left"><a href="z_f978324627c06562_serializers_py.html#t25"><data value='Meta'>CourseSerializer.Meta</data></a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f978324627c06562_serializers_py.html#t51">materials\serializers.py</a></td>
+                <td class="name left"><a href="z_f978324627c06562_serializers_py.html#t51"><data value='StaffCourseSerializer'>StaffCourseSerializer</data></a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f978324627c06562_serializers_py.html#t59">materials\serializers.py</a></td>
+                <td class="name left"><a href="z_f978324627c06562_serializers_py.html#t59"><data value='PaymentSerializer'>PaymentSerializer</data></a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f978324627c06562_serializers_py.html#t64">materials\serializers.py</a></td>
+                <td class="name left"><a href="z_f978324627c06562_serializers_py.html#t64"><data value='Meta'>PaymentSerializer.Meta</data></a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f978324627c06562_serializers_py.html">materials\serializers.py</a></td>
+                <td class="name left"><a href="z_f978324627c06562_serializers_py.html"><data value=''><span class='no-noun'>(no class)</span></data></a></td>
+                <td>29</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="29 29">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f978324627c06562_tests_py.html#t13">materials\tests.py</a></td>
+                <td class="name left"><a href="z_f978324627c06562_tests_py.html#t13"><data value='LessonTestCase'>LessonTestCase</data></a></td>
+                <td>76</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="76 76">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f978324627c06562_tests_py.html">materials\tests.py</a></td>
+                <td class="name left"><a href="z_f978324627c06562_tests_py.html"><data value=''><span class='no-noun'>(no class)</span></data></a></td>
+                <td>15</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="15 15">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f978324627c06562_urls_py.html">materials\urls.py</a></td>
+                <td class="name left"><a href="z_f978324627c06562_urls_py.html"><data value=''><span class='no-noun'>(no class)</span></data></a></td>
+                <td>8</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="8 8">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f978324627c06562_validators_py.html#t4">materials\validators.py</a></td>
+                <td class="name left"><a href="z_f978324627c06562_validators_py.html#t4"><data value='YoutubeLinkValidator'>YoutubeLinkValidator</data></a></td>
+                <td>6</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="6 6">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f978324627c06562_validators_py.html">materials\validators.py</a></td>
+                <td class="name left"><a href="z_f978324627c06562_validators_py.html"><data value=''><span class='no-noun'>(no class)</span></data></a></td>
+                <td>4</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="4 4">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f978324627c06562_views_py.html#t12">materials\views.py</a></td>
+                <td class="name left"><a href="z_f978324627c06562_views_py.html#t12"><data value='CourseViewSet'>CourseViewSet</data></a></td>
+                <td>16</td>
+                <td>16</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 16">0%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f978324627c06562_views_py.html#t41">materials\views.py</a></td>
+                <td class="name left"><a href="z_f978324627c06562_views_py.html#t41"><data value='LessonListCreateAPIView'>LessonListCreateAPIView</data></a></td>
+                <td>7</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="7 7">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f978324627c06562_views_py.html#t61">materials\views.py</a></td>
+                <td class="name left"><a href="z_f978324627c06562_views_py.html#t61"><data value='LessonRetrieveUpdateDestroyAPIView'>LessonRetrieveUpdateDestroyAPIView</data></a></td>
+                <td>5</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="5 5">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f978324627c06562_views_py.html#t73">materials\views.py</a></td>
+                <td class="name left"><a href="z_f978324627c06562_views_py.html#t73"><data value='SubscriptionListCreateAPIView'>SubscriptionListCreateAPIView</data></a></td>
+                <td>4</td>
+                <td>4</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 4">0%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f978324627c06562_views_py.html#t92">materials\views.py</a></td>
+                <td class="name left"><a href="z_f978324627c06562_views_py.html#t92"><data value='SubscriptionRetrieveUpdateDestroyAPIView'>SubscriptionRetrieveUpdateDestroyAPIView</data></a></td>
+                <td>5</td>
+                <td>5</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 5">0%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f978324627c06562_views_py.html">materials\views.py</a></td>
+                <td class="name left"><a href="z_f978324627c06562_views_py.html"><data value=''><span class='no-noun'>(no class)</span></data></a></td>
+                <td>35</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="35 35">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_145eef247bfb46b6___init___py.html">src\__init__.py</a></td>
+                <td class="name left"><a href="z_145eef247bfb46b6___init___py.html"><data value=''><span class='no-noun'>(no class)</span></data></a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_145eef247bfb46b6_utils_py.html">src\utils.py</a></td>
+                <td class="name left"><a href="z_145eef247bfb46b6_utils_py.html"><data value=''><span class='no-noun'>(no class)</span></data></a></td>
+                <td>7</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="7 7">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f6c68bdc9becfc1e___init___py.html">users\__init__.py</a></td>
+                <td class="name left"><a href="z_f6c68bdc9becfc1e___init___py.html"><data value=''><span class='no-noun'>(no class)</span></data></a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_admin_py.html#t8">users\admin.py</a></td>
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_admin_py.html#t8"><data value='CustomUserAdmin'>CustomUserAdmin</data></a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_admin_py.html">users\admin.py</a></td>
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_admin_py.html"><data value=''><span class='no-noun'>(no class)</span></data></a></td>
+                <td>6</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="6 6">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_apps_py.html#t4">users\apps.py</a></td>
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_apps_py.html#t4"><data value='UsersConfig'>UsersConfig</data></a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_apps_py.html">users\apps.py</a></td>
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_apps_py.html"><data value=''><span class='no-noun'>(no class)</span></data></a></td>
+                <td>4</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="4 4">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_8b562f3fe71efc7d___init___py.html">users\management\__init__.py</a></td>
+                <td class="name left"><a href="z_8b562f3fe71efc7d___init___py.html"><data value=''><span class='no-noun'>(no class)</span></data></a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_1df033120bbcc412___init___py.html">users\management\commands\__init__.py</a></td>
+                <td class="name left"><a href="z_1df033120bbcc412___init___py.html"><data value=''><span class='no-noun'>(no class)</span></data></a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_1df033120bbcc412_create_superuser_py.html#t5">users\management\commands\create_superuser.py</a></td>
+                <td class="name left"><a href="z_1df033120bbcc412_create_superuser_py.html#t5"><data value='Command'>Command</data></a></td>
+                <td>10</td>
+                <td>10</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 10">0%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_1df033120bbcc412_create_superuser_py.html">users\management\commands\create_superuser.py</a></td>
+                <td class="name left"><a href="z_1df033120bbcc412_create_superuser_py.html"><data value=''><span class='no-noun'>(no class)</span></data></a></td>
+                <td>5</td>
+                <td>5</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 5">0%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_1df033120bbcc412_load_payments_py.html#t7">users\management\commands\load_payments.py</a></td>
+                <td class="name left"><a href="z_1df033120bbcc412_load_payments_py.html#t7"><data value='Command'>Command</data></a></td>
+                <td>3</td>
+                <td>3</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 3">0%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_1df033120bbcc412_load_payments_py.html">users\management\commands\load_payments.py</a></td>
+                <td class="name left"><a href="z_1df033120bbcc412_load_payments_py.html"><data value=''><span class='no-noun'>(no class)</span></data></a></td>
+                <td>5</td>
+                <td>5</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 5">0%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_1df033120bbcc412_load_users_py.html#t7">users\management\commands\load_users.py</a></td>
+                <td class="name left"><a href="z_1df033120bbcc412_load_users_py.html#t7"><data value='Command'>Command</data></a></td>
+                <td>3</td>
+                <td>3</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 3">0%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_1df033120bbcc412_load_users_py.html">users\management\commands\load_users.py</a></td>
+                <td class="name left"><a href="z_1df033120bbcc412_load_users_py.html"><data value=''><span class='no-noun'>(no class)</span></data></a></td>
+                <td>5</td>
+                <td>5</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 5">0%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_1df033120bbcc412_load_users_and_groups_py.html#t8">users\management\commands\load_users_and_groups.py</a></td>
+                <td class="name left"><a href="z_1df033120bbcc412_load_users_and_groups_py.html#t8"><data value='Command'>Command</data></a></td>
+                <td>5</td>
+                <td>5</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 5">0%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_1df033120bbcc412_load_users_and_groups_py.html">users\management\commands\load_users_and_groups.py</a></td>
+                <td class="name left"><a href="z_1df033120bbcc412_load_users_and_groups_py.html"><data value=''><span class='no-noun'>(no class)</span></data></a></td>
+                <td>6</td>
+                <td>6</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 6">0%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_fff39e3ca0aaeed4_0001_initial_py.html#t6">users\migrations\0001_initial.py</a></td>
+                <td class="name left"><a href="z_fff39e3ca0aaeed4_0001_initial_py.html#t6"><data value='Migration'>Migration</data></a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_fff39e3ca0aaeed4_0001_initial_py.html">users\migrations\0001_initial.py</a></td>
+                <td class="name left"><a href="z_fff39e3ca0aaeed4_0001_initial_py.html"><data value=''><span class='no-noun'>(no class)</span></data></a></td>
+                <td>5</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="5 5">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_fff39e3ca0aaeed4_0002_payment_py.html#t7">users\migrations\0002_payment.py</a></td>
+                <td class="name left"><a href="z_fff39e3ca0aaeed4_0002_payment_py.html#t7"><data value='Migration'>Migration</data></a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_fff39e3ca0aaeed4_0002_payment_py.html">users\migrations\0002_payment.py</a></td>
+                <td class="name left"><a href="z_fff39e3ca0aaeed4_0002_payment_py.html"><data value=''><span class='no-noun'>(no class)</span></data></a></td>
+                <td>5</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="5 5">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_fff39e3ca0aaeed4_0003_alter_user_managers_rename_user_payment_owner_and_more_py.html#t8">users\migrations\0003_alter_user_managers_rename_user_payment_owner_and_more.py</a></td>
+                <td class="name left"><a href="z_fff39e3ca0aaeed4_0003_alter_user_managers_rename_user_payment_owner_and_more_py.html#t8"><data value='Migration'>Migration</data></a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_fff39e3ca0aaeed4_0003_alter_user_managers_rename_user_payment_owner_and_more_py.html">users\migrations\0003_alter_user_managers_rename_user_payment_owner_and_more.py</a></td>
+                <td class="name left"><a href="z_fff39e3ca0aaeed4_0003_alter_user_managers_rename_user_payment_owner_and_more_py.html"><data value=''><span class='no-noun'>(no class)</span></data></a></td>
+                <td>6</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="6 6">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_fff39e3ca0aaeed4_0004_delete_payment_py.html#t6">users\migrations\0004_delete_payment.py</a></td>
+                <td class="name left"><a href="z_fff39e3ca0aaeed4_0004_delete_payment_py.html#t6"><data value='Migration'>Migration</data></a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_fff39e3ca0aaeed4_0004_delete_payment_py.html">users\migrations\0004_delete_payment.py</a></td>
+                <td class="name left"><a href="z_fff39e3ca0aaeed4_0004_delete_payment_py.html"><data value=''><span class='no-noun'>(no class)</span></data></a></td>
+                <td>4</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="4 4">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_fff39e3ca0aaeed4___init___py.html">users\migrations\__init__.py</a></td>
+                <td class="name left"><a href="z_fff39e3ca0aaeed4___init___py.html"><data value=''><span class='no-noun'>(no class)</span></data></a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_models_py.html#t6">users\models.py</a></td>
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_models_py.html#t6"><data value='User'>User</data></a></td>
+                <td>1</td>
+                <td>1</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 1">0%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_models_py.html#t16">users\models.py</a></td>
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_models_py.html#t16"><data value='Meta'>User.Meta</data></a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_models_py.html">users\models.py</a></td>
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_models_py.html"><data value=''><span class='no-noun'>(no class)</span></data></a></td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="14 14">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_permissions_py.html#t4">users\permissions.py</a></td>
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_permissions_py.html#t4"><data value='IsModerator'>IsModerator</data></a></td>
+                <td>1</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="1 1">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_permissions_py.html#t9">users\permissions.py</a></td>
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_permissions_py.html#t9"><data value='IsOwner'>IsOwner</data></a></td>
+                <td>1</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="1 1">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_permissions_py.html#t14">users\permissions.py</a></td>
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_permissions_py.html#t14"><data value='IsCurrentUser'>IsCurrentUser</data></a></td>
+                <td>1</td>
+                <td>1</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 1">0%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_permissions_py.html">users\permissions.py</a></td>
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_permissions_py.html"><data value=''><span class='no-noun'>(no class)</span></data></a></td>
+                <td>7</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="7 7">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_serializers_py.html#t7">users\serializers.py</a></td>
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_serializers_py.html#t7"><data value='NewUserSerializer'>NewUserSerializer</data></a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_serializers_py.html#t8">users\serializers.py</a></td>
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_serializers_py.html#t8"><data value='Meta'>NewUserSerializer.Meta</data></a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_serializers_py.html#t13">users\serializers.py</a></td>
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_serializers_py.html#t13"><data value='UserSerializer'>UserSerializer</data></a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_serializers_py.html#t14">users\serializers.py</a></td>
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_serializers_py.html#t14"><data value='Meta'>UserSerializer.Meta</data></a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_serializers_py.html#t19">users\serializers.py</a></td>
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_serializers_py.html#t19"><data value='UserDetailSerializer'>UserDetailSerializer</data></a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_serializers_py.html#t22">users\serializers.py</a></td>
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_serializers_py.html#t22"><data value='Meta'>UserDetailSerializer.Meta</data></a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_serializers_py.html">users\serializers.py</a></td>
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_serializers_py.html"><data value=''><span class='no-noun'>(no class)</span></data></a></td>
+                <td>16</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="16 16">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_tests_py.html">users\tests.py</a></td>
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_tests_py.html"><data value=''><span class='no-noun'>(no class)</span></data></a></td>
+                <td>1</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="1 1">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_urls_py.html">users\urls.py</a></td>
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_urls_py.html"><data value=''><span class='no-noun'>(no class)</span></data></a></td>
+                <td>7</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="7 7">100%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_views_py.html#t14">users\views.py</a></td>
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_views_py.html#t14"><data value='UserListCreateAPIView'>UserListCreateAPIView</data></a></td>
+                <td>9</td>
+                <td>9</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 9">0%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_views_py.html#t34">users\views.py</a></td>
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_views_py.html#t34"><data value='UserRetrieveUpdateDestroyAPIView'>UserRetrieveUpdateDestroyAPIView</data></a></td>
+                <td>8</td>
+                <td>8</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 8">0%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_views_py.html#t51">users\views.py</a></td>
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_views_py.html#t51"><data value='PaymentListCreateAPIView'>PaymentListCreateAPIView</data></a></td>
+                <td>4</td>
+                <td>4</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 4">0%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_views_py.html#t67">users\views.py</a></td>
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_views_py.html#t67"><data value='PaymentRetrieveUpdateDestroyAPIView'>PaymentRetrieveUpdateDestroyAPIView</data></a></td>
+                <td>5</td>
+                <td>5</td>
+                <td>0</td>
+                <td class="right" data-ratio="0 5">0%</td>
+            </tr>
+            <tr class="region">
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_views_py.html">users\views.py</a></td>
+                <td class="name left"><a href="z_f6c68bdc9becfc1e_views_py.html"><data value=''><span class='no-noun'>(no class)</span></data></a></td>
+                <td>32</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="right" data-ratio="32 32">100%</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr class="total">
+                <td class="name left">Total</td>
+                <td class="name left">&nbsp;</td>
+                <td>551</td>
+                <td>114</td>
+                <td>0</td>
+                <td class="right" data-ratio="437 551">79%</td>
+            </tr>
+        </tfoot>
+    </table>
+    <p id="no_rows">
+        No items found using the specified filter.
+    </p>
+</main>
+<footer>
+    <div class="content">
+        <p>
+            <a class="nav" href="https://coverage.readthedocs.io/en/7.6.10">coverage.py v7.6.10</a>,
+            created at 2025-01-25 15:26 +0300
+        </p>
+    </div>
+    <aside class="hidden">
+        <a id="prevFileLink" class="nav" href=""></a>
+        <a id="nextFileLink" class="nav" href=""></a>
+        <button type="button" class="button_prev_file" data-shortcut="["></button>
+        <button type="button" class="button_next_file" data-shortcut="]"></button>
+        <button type="button" class="button_show_hide_help" data-shortcut="?"></button>
+    </aside>
+</footer>
+</body>
+</html>
