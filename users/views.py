@@ -3,7 +3,7 @@ from rest_framework import generics
 from rest_framework.filters import OrderingFilter
 
 from materials.models import Payment
-from src.utils import get_queryset_for_owner
+from src.utils import get_queryset_for_owner, check_session_status
 from .models import User
 from .serializers import PaymentSerializer, UserSerializer, NewUserSerializer, UserDetailSerializer
 from rest_framework.permissions import AllowAny, IsAdminUser
@@ -65,13 +65,28 @@ class PaymentListCreateAPIView(generics.ListCreateAPIView):
 
 
 class PaymentRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
+    """
+    Дженерик для просмотра, редактирования и удаления объекта Payment:
+    """
     queryset = Payment.objects.all()
     serializer_class = PaymentSerializer
 
     def get_permissions(self):
-        if self.request.method in ["PATCH", "PUT", "GET"]:
+        """
+        Выдача разрешений в зависимости от статуса пользователя
+        """
+        if self.request.method == "GET":
             self.permission_classes = [IsOwner | IsModerator | IsAdminUser]
-        elif self.request.method == "DELETE":
-            self.permission_classes = [IsOwner | IsAdminUser]
+        elif self.request.method in ["PATCH", "PUT", "DELETE"]:
+            self.permission_classes = [IsModerator | IsAdminUser]
         return super().get_permissions()
 
+    def get_object(self):
+        """
+        Уточнение статуса для неоплаченного платежа при обращении к объекту
+        """
+        payment = super().get_object()
+        if payment.session_id and payment.status == "unpaid":
+            payment.status = check_session_status(payment.session_id)
+            payment.save()
+        return payment
