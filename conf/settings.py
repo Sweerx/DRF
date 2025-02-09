@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'django_filters',
     'rest_framework_simplejwt',
     "drf_yasg",
+    "django_celery_beat",
     'users',
     'materials',
 ]
@@ -154,3 +155,14 @@ SWAGGER_SETTINGS = {
         }
     },
 }
+
+CELERY_TIMEZONE = TIME_ZONE
+CELERY_BROKER_URL = env.str("CELERY_BROKER_URL")
+CELERY_RESULT_BACKEND = env.str("CELERY_RESULT_BACKEND")
+CELERY_BEAT_SCHEDULER = "django_celery_beat.schedulers:DatabaseScheduler"
+
+
+CELERY_BEAT_SCHEDULE = {
+    'block_inactive_users': {
+        'task': 'users.tasks.block_inactive_users',
+        'schedule': timedelta(days=1)}}
