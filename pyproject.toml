@@ -15,6 +15,9 @@ environs = "14.0.0"
 django-filter = "24.3"
 djangorestframework-simplejwt = "5.4.0"
 coverage = "7.6.10"
+drf-yasg = "^1.21.8"
+stripe = "^11.4.1"
+
 
 #phonenumbers = "*"
 
