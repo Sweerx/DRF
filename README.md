@@ -13,6 +13,7 @@
 - Python 3.10+
 - Redis (брокер для Celery)
 - Poetry (менеджер зависимостей)
+- Docker
 
 ## 🛠 Установка
 
@@ -31,34 +32,11 @@ git clone https://github.com/Sweerx/DRF.git
   brew install redis
   ```
 
-### 3. Установка зависимостей
-```bash
-pip install poetry
-poetry install
-```
-
 ## 🏃 Запуск проекта
 
-1. Запустите Redis:
+В терминале/командной строке вводим
 ```bash
-redis-server
-```
-
-2. Примените миграции и загрузите фикстуры:
-```bash
-python manage.py migrate
-python manage.py load_users_and_groups
-python manage.py load_mypedia
-```
-
-3. Запустите Django-сервер:
-```bash
-python manage.py runserver
-```
-
-4. Запустите Celery worker с Beat:
-```bash
-celery -A config worker --beat --scheduler django --loglevel=info
+docker compose up --build
 ```
 
 ## 🧪 Тестирование
