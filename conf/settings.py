@@ -1,15 +1,12 @@
 import os
 import sys
 from pathlib import Path
-from environs import Env
 from datetime import timedelta
 
 from dotenv import load_dotenv
 
 load_dotenv(override=True)
 
-env = Env()
-env.read_env()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -148,7 +145,7 @@ SIMPLE_JWT = {
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
 }
 
-STRIPE_API_KEY = env.str("STRIPE_API_KEY")
+STRIPE_API_KEY = os.getenv("STRIPE_API_KEY")
 
 
 SWAGGER_SETTINGS = {
@@ -158,8 +155,8 @@ SWAGGER_SETTINGS = {
 }
 
 CELERY_TIMEZONE = TIME_ZONE
-CELERY_BROKER_URL = env.str("CELERY_BROKER_URL")
-CELERY_RESULT_BACKEND = env.str("CELERY_RESULT_BACKEND")
+CELERY_BROKER_URL = os.getenv("CELERY_BROKER_URL")
+CELERY_RESULT_BACKEND = os.getenv("CELERY_RESULT_BACKEND")
 CELERY_BEAT_SCHEDULER = "django_celery_beat.schedulers:DatabaseScheduler"
 
 
