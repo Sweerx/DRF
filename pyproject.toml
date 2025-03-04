@@ -17,6 +17,8 @@ djangorestframework-simplejwt = "5.4.0"
 coverage = "7.6.10"
 drf-yasg = "^1.21.8"
 stripe = "^11.4.1"
+flake8 = "7.1.2"
+gunicorn = "23.0.0"
 
 
 #phonenumbers = "*"
