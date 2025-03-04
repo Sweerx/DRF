@@ -3,7 +3,7 @@ from django.urls import reverse
 from rest_framework import status
 from rest_framework.test import APITestCase
 
-from mypedia.models import Course, Lesson, Payment
+from materials.models import Course, Lesson, Payment
 
 from .models import User
 
