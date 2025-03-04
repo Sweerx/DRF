@@ -11,7 +11,7 @@ load_dotenv(override=True)
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-SECRET_KEY = env.str("SECRET_KEY", "fallback-secret")
+SECRET_KEY = os.getenv("SECRET_KEY", "fallback-secret")
 
 DEBUG = True
 
