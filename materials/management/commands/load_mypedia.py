@@ -16,7 +16,11 @@ class Command(BaseCommand):
         Lesson.objects.all().delete()
         Course.objects.all().delete()
 
-        call_command('loaddata', 'mypedia.json')
-        call_command('loaddata', 'payments.json')
+        call_command("loaddata", "mypedia.json")
+        call_command("loaddata", "payments.json")
 
-        self.stdout.write(self.style.SUCCESS("Фикстуры из файлов mypedia.json и payments.json успешно загружены"))
+        self.stdout.write(
+            self.style.SUCCESS(
+                "Фикстуры из файлов mypedia.json и payments.json успешно загружены"
+            )
+        )

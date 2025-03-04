@@ -13,6 +13,8 @@ class Command(BaseCommand):
 
         Payment.objects.all().delete()
 
-        call_command('loaddata', 'payments.json')
+        call_command("loaddata", "payments.json")
 
-        self.stdout.write(self.style.SUCCESS("Фикстуры из файла payments.json успешно загружены"))
+        self.stdout.write(
+            self.style.SUCCESS("Фикстуры из файла payments.json успешно загружены")
+        )

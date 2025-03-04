@@ -7,65 +7,160 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Course',
+            name="Course",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=150, verbose_name='Название')),
-                ('preview', models.ImageField(blank=True, null=True, upload_to='mypedia/courses/previews/')),
-                ('description', models.TextField(blank=True, null=True, verbose_name='Описание')),
-                ('updated_at', models.DateTimeField(auto_now=True, verbose_name='Дата обновления')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=150, verbose_name="Название")),
+                (
+                    "preview",
+                    models.ImageField(
+                        blank=True, null=True, upload_to="mypedia/courses/previews/"
+                    ),
+                ),
+                (
+                    "description",
+                    models.TextField(blank=True, null=True, verbose_name="Описание"),
+                ),
+                (
+                    "updated_at",
+                    models.DateTimeField(auto_now=True, verbose_name="Дата обновления"),
+                ),
             ],
             options={
-                'verbose_name': 'Курс',
-                'verbose_name_plural': 'Курсы',
+                "verbose_name": "Курс",
+                "verbose_name_plural": "Курсы",
             },
         ),
         migrations.CreateModel(
-            name='Lesson',
+            name="Lesson",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=150, verbose_name='Название')),
-                ('preview', models.ImageField(blank=True, null=True, upload_to='mypedia/courses/previews/')),
-                ('description', models.TextField(blank=True, null=True, verbose_name='Описание')),
-                ('video_link', models.TextField(blank=True, null=True, verbose_name='Ссылка на видео')),
-                ('updated_at', models.DateTimeField(auto_now=True, verbose_name='Дата обновления')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=150, verbose_name="Название")),
+                (
+                    "preview",
+                    models.ImageField(
+                        blank=True, null=True, upload_to="mypedia/courses/previews/"
+                    ),
+                ),
+                (
+                    "description",
+                    models.TextField(blank=True, null=True, verbose_name="Описание"),
+                ),
+                (
+                    "video_link",
+                    models.TextField(
+                        blank=True, null=True, verbose_name="Ссылка на видео"
+                    ),
+                ),
+                (
+                    "updated_at",
+                    models.DateTimeField(auto_now=True, verbose_name="Дата обновления"),
+                ),
             ],
             options={
-                'verbose_name': 'Урок',
-                'verbose_name_plural': 'Уроки',
+                "verbose_name": "Урок",
+                "verbose_name_plural": "Уроки",
             },
         ),
         migrations.CreateModel(
-            name='Payment',
+            name="Payment",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('amount', models.PositiveIntegerField(verbose_name='Сумма оплаты')),
-                ('payment_method', models.CharField(choices=[('cash', 'Наличные'), ('transfer_to_account', 'Перевод на счет')], max_length=25, verbose_name='Способ оплаты')),
-                ('payment_date', models.DateField(auto_now_add=True, verbose_name='Дата платежа')),
-                ('link', models.CharField(blank=True, max_length=400, null=True, verbose_name='Ссылка на оплату')),
-                ('session_id', models.CharField(blank=True, max_length=255, null=True, verbose_name='ID сессии')),
-                ('status', models.CharField(default='unpaid', max_length=50, verbose_name='Статус')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("amount", models.PositiveIntegerField(verbose_name="Сумма оплаты")),
+                (
+                    "payment_method",
+                    models.CharField(
+                        choices=[
+                            ("cash", "Наличные"),
+                            ("transfer_to_account", "Перевод на счет"),
+                        ],
+                        max_length=25,
+                        verbose_name="Способ оплаты",
+                    ),
+                ),
+                (
+                    "payment_date",
+                    models.DateField(auto_now_add=True, verbose_name="Дата платежа"),
+                ),
+                (
+                    "link",
+                    models.CharField(
+                        blank=True,
+                        max_length=400,
+                        null=True,
+                        verbose_name="Ссылка на оплату",
+                    ),
+                ),
+                (
+                    "session_id",
+                    models.CharField(
+                        blank=True, max_length=255, null=True, verbose_name="ID сессии"
+                    ),
+                ),
+                (
+                    "status",
+                    models.CharField(
+                        default="unpaid", max_length=50, verbose_name="Статус"
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Платеж',
-                'verbose_name_plural': 'Платежи',
+                "verbose_name": "Платеж",
+                "verbose_name_plural": "Платежи",
             },
         ),
         migrations.CreateModel(
-            name='Subscription',
+            name="Subscription",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('is_active', models.BooleanField(default=True, verbose_name='Активна')),
-                ('created_at', models.DateField(auto_now_add=True, verbose_name='Дата активации')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "is_active",
+                    models.BooleanField(default=True, verbose_name="Активна"),
+                ),
+                (
+                    "created_at",
+                    models.DateField(auto_now_add=True, verbose_name="Дата активации"),
+                ),
             ],
             options={
-                'verbose_name': 'Подписка',
-                'verbose_name_plural': 'Подписки',
+                "verbose_name": "Подписка",
+                "verbose_name_plural": "Подписки",
             },
         ),
     ]

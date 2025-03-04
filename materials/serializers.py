@@ -54,7 +54,9 @@ class CourseSerializer(serializers.ModelSerializer):
         """
         Проверка, подписан ли пользователь на курс
         """
-        if Subscription.objects.filter(owner=self.context["request"].user, course=obj).exists():
+        if Subscription.objects.filter(
+            owner=self.context["request"].user, course=obj
+        ).exists():
             return "Вы подписаны"
         else:
             return "Вы еще не подписаны"
@@ -64,6 +66,7 @@ class StaffCourseSerializer(CourseSerializer):
     """
     Сериализатор для модели Course, отображающийся модератору и админу
     """
+
     lessons_count = serializers.SerializerMethodField()
     course_lessons = LessonSerializer(source="lessons", many=True, read_only=True)
 
@@ -72,6 +75,7 @@ class PaymentSerializer(serializers.ModelSerializer):
     """
     Сериализатор для списка объектов модели Payment
     """
+
     class Meta:
         model = Payment
         fields = "__all__"

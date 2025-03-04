@@ -5,6 +5,7 @@ class YoutubeLinkValidator:
     """
     Проверка, что ссылка в поле ведет на ресурс youtube.com
     """
+
     def __init__(self, field):
         self.field = field
 
@@ -15,4 +16,6 @@ class YoutubeLinkValidator:
 
         if str_value:
             if not str_value.startswith(template):
-                raise ValidationError("Ссылка может быть только видео сервис youtube.com")
+                raise ValidationError(
+                    "Ссылка может быть только видео сервис youtube.com"
+                )

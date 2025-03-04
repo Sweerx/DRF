@@ -7,7 +7,12 @@ from users.permissions import IsModerator, IsOwner
 
 from .models import Course, Lesson, Subscription
 from .paginators import CoursePaginator, LessonPaginator
-from .serializers import CourseSerializer, LessonSerializer, StaffCourseSerializer, SubscriptionSerializer
+from .serializers import (
+    CourseSerializer,
+    LessonSerializer,
+    StaffCourseSerializer,
+    SubscriptionSerializer,
+)
 from .tasks import send_message_about_course_update
 
 
@@ -16,6 +21,7 @@ class CourseViewSet(viewsets.ModelViewSet):
     """
     Вьюсет для CRUD операций с моделью Course
     """
+
     queryset = Course.objects.all()
     serializer_class = CourseSerializer
     pagination_class = CoursePaginator
@@ -61,7 +67,9 @@ class CourseViewSet(viewsets.ModelViewSet):
         Подбор сериализатора в зависимости от статуса пользователя
         """
         try:
-            if self.request.user.is_superuser or self.request.user.groups.get(name="Moderators"):
+            if self.request.user.is_superuser or self.request.user.groups.get(
+                name="Moderators"
+            ):
                 return StaffCourseSerializer
         except Group.DoesNotExist:
             return CourseSerializer
@@ -71,6 +79,7 @@ class LessonListCreateAPIView(generics.ListCreateAPIView):
     """
     Дженерик для отображения списка и создания нового объекта Lesson:
     """
+
     queryset = Lesson.objects.all()
     serializer_class = LessonSerializer
     pagination_class = LessonPaginator
@@ -109,6 +118,7 @@ class LessonRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
     """
     Дженерик для просмотра, редактирования и удаления объекта Lesson:
     """
+
     queryset = Lesson.objects.all()
     serializer_class = LessonSerializer
 
@@ -140,6 +150,7 @@ class SubscriptionListCreateAPIView(generics.ListCreateAPIView):
     """
     Дженерик для отображения списка и создания нового объекта Subscription:
     """
+
     queryset = Subscription.objects.all()
     serializer_class = SubscriptionSerializer
 
@@ -162,6 +173,7 @@ class SubscriptionRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPI
     """
     Дженерик для просмотра, редактирования и удаления объекта Subscription:
     """
+
     queryset = Subscription.objects.all()
     serializer_class = SubscriptionSerializer
 

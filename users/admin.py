@@ -10,4 +10,5 @@ class CustomUserAdmin(UserAdmin):
     """
     Класс для отображения модели User в интерфейсе админки
     """
+
     list_display = ("id", "email", "username", "phone_number")

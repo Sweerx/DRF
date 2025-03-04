@@ -22,7 +22,9 @@ class UserTestCase(APITestCase):
         self.user = User.objects.create(email="test@email.com")
         self.user.set_password("12345")
         self.user.save()
-        self.admin = User.objects.create(email="admin@email.com", is_staff=True, is_superuser=True)
+        self.admin = User.objects.create(
+            email="admin@email.com", is_staff=True, is_superuser=True
+        )
         self.moderator = User.objects.create(email="moderator@email.com")
         group = Group.objects.create(name="Moderators")
         self.moderator.groups.add(group)
@@ -39,16 +41,18 @@ class UserTestCase(APITestCase):
         response = self.client.get(url)
         data = response.json()
         data_keys = [key for key in data.keys()]
-        result_keys = ['id',
-                       'email',
-                       'password',
-                       'username',
-                       'first_name',
-                       'last_name',
-                       'phone_number',
-                       'country',
-                       'avatar',
-                       'payments_history']
+        result_keys = [
+            "id",
+            "email",
+            "password",
+            "username",
+            "first_name",
+            "last_name",
+            "phone_number",
+            "country",
+            "avatar",
+            "payments_history",
+        ]
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(data_keys, result_keys)
@@ -58,12 +62,7 @@ class UserTestCase(APITestCase):
         response = self.client.get(url)
         data = response.json()
         data_keys = [key for key in data.keys()]
-        result_keys = ['id',
-                       'email',
-                       'username',
-                       'first_name',
-                       'country',
-                       'avatar']
+        result_keys = ["id", "email", "username", "first_name", "country", "avatar"]
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(data_keys, result_keys)
@@ -74,16 +73,18 @@ class UserTestCase(APITestCase):
         response = self.client.get(url)
         data = response.json()
         data_keys = [key for key in data.keys()]
-        result_keys = ['id',
-                       'email',
-                       'password',
-                       'username',
-                       'first_name',
-                       'last_name',
-                       'phone_number',
-                       'country',
-                       'avatar',
-                       'payments_history']
+        result_keys = [
+            "id",
+            "email",
+            "password",
+            "username",
+            "first_name",
+            "last_name",
+            "phone_number",
+            "country",
+            "avatar",
+            "payments_history",
+        ]
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(data_keys, result_keys)
@@ -94,10 +95,7 @@ class UserTestCase(APITestCase):
         """
 
         url = reverse("users:users")
-        data = {
-            "email": "test2@email.com",
-            "password": "12345"
-        }
+        data = {"email": "test2@email.com", "password": "12345"}
         response = self.client.post(url, data)
 
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
@@ -111,9 +109,7 @@ class UserTestCase(APITestCase):
 
         # Обычный пользователь - свой профиль
         url = reverse("users:user", args=[self.user.pk])
-        data = {
-            "username": "test"
-        }
+        data = {"username": "test"}
         response = self.client.patch(url, data)
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
@@ -121,9 +117,7 @@ class UserTestCase(APITestCase):
 
         # Обычный пользователь - чужой профиль
         url = reverse("users:user", args=[self.moderator.pk])
-        data = {
-            "username": "test"
-        }
+        data = {"username": "test"}
         response = self.client.patch(url, data)
 
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
@@ -131,9 +125,7 @@ class UserTestCase(APITestCase):
         # Модератор - общедоступные данные
         self.client.force_authenticate(self.moderator)
         url = reverse("users:user", args=[self.user.pk])
-        data = {
-            "username": "test"
-        }
+        data = {"username": "test"}
         response = self.client.patch(url, data)
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
@@ -142,9 +134,7 @@ class UserTestCase(APITestCase):
         # Модератор - конфиденциальные данные
         self.client.force_authenticate(self.moderator)
         url = reverse("users:user", args=[self.user.pk])
-        data = {
-            "phone_number": "8-800-555-35-35"
-        }
+        data = {"phone_number": "8-800-555-35-35"}
         response = self.client.patch(url, data)
 
         with self.assertRaises(KeyError):  # данные не обработаются сериализатором
@@ -153,9 +143,7 @@ class UserTestCase(APITestCase):
         # Админ - конфиденциальные данные
         self.client.force_authenticate(self.admin)
         url = reverse("users:user", args=[self.user.pk])
-        data = {
-            "phone_number": "8-800-555-35-35"
-        }
+        data = {"phone_number": "8-800-555-35-35"}
         response = self.client.patch(url, data)
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
@@ -195,24 +183,32 @@ class UserTestCase(APITestCase):
         url = reverse("users:users")
         response = self.client.get(url)
         data = response.json()
-        result = [{'id': self.user.pk,
-                   'email': self.user.email,
-                   'username': self.user.username,
-                   'first_name': self.user.first_name,
-                   'country': self.user.country,
-                   'avatar': None},
-                  {'id': self.admin.pk,
-                   'email': self.admin.email,
-                   'username': self.admin.username,
-                   'first_name': self.admin.first_name,
-                   'country': self.admin.country,
-                   'avatar': None},
-                  {'id': self.moderator.pk,
-                   'email': self.moderator.email,
-                   'username': self.moderator.username,
-                   'first_name': self.moderator.first_name,
-                   'country': self.moderator.country,
-                   'avatar': None}]
+        result = [
+            {
+                "id": self.user.pk,
+                "email": self.user.email,
+                "username": self.user.username,
+                "first_name": self.user.first_name,
+                "country": self.user.country,
+                "avatar": None,
+            },
+            {
+                "id": self.admin.pk,
+                "email": self.admin.email,
+                "username": self.admin.username,
+                "first_name": self.admin.first_name,
+                "country": self.admin.country,
+                "avatar": None,
+            },
+            {
+                "id": self.moderator.pk,
+                "email": self.moderator.email,
+                "username": self.moderator.username,
+                "first_name": self.moderator.first_name,
+                "country": self.moderator.country,
+                "avatar": None,
+            },
+        ]
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(data, result)
@@ -225,10 +221,7 @@ class UserTestCase(APITestCase):
 
         # Проверка авторизации
         url = reverse("users:login")
-        data = {
-            "email": "test@email.com",
-            "password": "12345"
-        }
+        data = {"email": "test@email.com", "password": "12345"}
         response = self.client.post(url, data)
         result = response.json()
         result_keys = [key for key in result.keys()]
@@ -237,9 +230,7 @@ class UserTestCase(APITestCase):
 
         # Проверка обновления access токена по refresh токену
         url = reverse("users:token-refresh")
-        data = {
-            "refresh": result["refresh"]
-        }
+        data = {"refresh": result["refresh"]}
         response = self.client.post(url, data)
         result = response.json()
 
@@ -261,11 +252,18 @@ class PaymentTestCase(APITestCase):
         group = Group.objects.create(name="Moderators")
         self.moderator.groups.add(group)
 
-        self.course = Course.objects.create(name="Тестовый курс 1", description="Первый тестовый курс")
-        self.lesson = Lesson.objects.create(name="Тестовый урок 1",
-                                            description="Первый тестовый урок")
-        self.payment = Payment.objects.create(amount=2500, payment_method="cash", course=self.course, owner=self.user)
-        self.payment_2 = Payment.objects.create(amount=5000, payment_method="transfer_to_account", lesson=self.lesson)
+        self.course = Course.objects.create(
+            name="Тестовый курс 1", description="Первый тестовый курс"
+        )
+        self.lesson = Lesson.objects.create(
+            name="Тестовый урок 1", description="Первый тестовый урок"
+        )
+        self.payment = Payment.objects.create(
+            amount=2500, payment_method="cash", course=self.course, owner=self.user
+        )
+        self.payment_2 = Payment.objects.create(
+            amount=5000, payment_method="transfer_to_account", lesson=self.lesson
+        )
 
         self.client.force_authenticate(self.user)
 
@@ -278,16 +276,18 @@ class PaymentTestCase(APITestCase):
         url = reverse("users:payment", args=[self.payment.pk])
         response = self.client.get(url)
         data = response.json()
-        result = {'id': self.payment.pk,
-                  'amount': self.payment.amount,
-                  'payment_method': self.payment.payment_method,
-                  'payment_date': self.payment.payment_date.isoformat(),
-                  'link': self.payment.link,
-                  'session_id': self.payment.session_id,
-                  'status': self.payment.status,
-                  'owner': self.payment.owner.pk,
-                  'course': self.payment.course.pk,
-                  'lesson': None}
+        result = {
+            "id": self.payment.pk,
+            "amount": self.payment.amount,
+            "payment_method": self.payment.payment_method,
+            "payment_date": self.payment.payment_date.isoformat(),
+            "link": self.payment.link,
+            "session_id": self.payment.session_id,
+            "status": self.payment.status,
+            "owner": self.payment.owner.pk,
+            "course": self.payment.course.pk,
+            "lesson": None,
+        }
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(data, result)
@@ -303,16 +303,18 @@ class PaymentTestCase(APITestCase):
         url = reverse("users:payment", args=[self.payment.pk])
         response = self.client.get(url)
         data = response.json()
-        result = {'id': self.payment.pk,
-                  'amount': self.payment.amount,
-                  'payment_method': self.payment.payment_method,
-                  'payment_date': self.payment.payment_date.isoformat(),
-                  'link': self.payment.link,
-                  'session_id': self.payment.session_id,
-                  'status': self.payment.status,
-                  'owner': self.payment.owner.pk,
-                  'course': self.payment.course.pk,
-                  'lesson': None}
+        result = {
+            "id": self.payment.pk,
+            "amount": self.payment.amount,
+            "payment_method": self.payment.payment_method,
+            "payment_date": self.payment.payment_date.isoformat(),
+            "link": self.payment.link,
+            "session_id": self.payment.session_id,
+            "status": self.payment.status,
+            "owner": self.payment.owner.pk,
+            "course": self.payment.course.pk,
+            "lesson": None,
+        }
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(data, result)
@@ -323,16 +325,14 @@ class PaymentTestCase(APITestCase):
         """
 
         url = reverse("users:payments")
-        data = {
-            "amount": 10000,
-            "payment_method": "cash",
-            "lesson": self.lesson.pk
-        }
+        data = {"amount": 10000, "payment_method": "cash", "lesson": self.lesson.pk}
         response = self.client.post(url, data)
 
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         self.assertEqual(response.json()["owner"], self.user.pk)
-        self.assertTrue(all([response.json().get("link"), response.json().get("session_id")]))
+        self.assertTrue(
+            all([response.json().get("link"), response.json().get("session_id")])
+        )
         self.assertEqual(Payment.objects.all().count(), 3)
 
     def test_payment_update(self):
@@ -342,9 +342,7 @@ class PaymentTestCase(APITestCase):
 
         # Обычный пользователь
         url = reverse("users:payment", args=[self.payment.pk])
-        data = {
-            "amount": 1000000
-        }
+        data = {"amount": 1000000}
         response = self.client.patch(url, data)
 
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
@@ -352,9 +350,7 @@ class PaymentTestCase(APITestCase):
         # Модератор
         self.client.force_authenticate(self.moderator)
         url = reverse("users:payment", args=[self.payment.pk])
-        data = {
-            "amount": 0
-        }
+        data = {"amount": 0}
         response = self.client.patch(url, data)
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
@@ -388,16 +384,20 @@ class PaymentTestCase(APITestCase):
         url = reverse("users:payments")
         response = self.client.get(url)
         data = response.json()
-        result = [{'id': self.payment.pk,
-                   'amount': self.payment.amount,
-                   'payment_method': self.payment.payment_method,
-                   'payment_date': self.payment.payment_date.isoformat(),
-                   'link': self.payment.link,
-                   'session_id': self.payment.session_id,
-                   'status': self.payment.status,
-                   'owner': self.payment.owner.pk,
-                   'course': self.payment.course.pk,
-                   'lesson': None}]
+        result = [
+            {
+                "id": self.payment.pk,
+                "amount": self.payment.amount,
+                "payment_method": self.payment.payment_method,
+                "payment_date": self.payment.payment_date.isoformat(),
+                "link": self.payment.link,
+                "session_id": self.payment.session_id,
+                "status": self.payment.status,
+                "owner": self.payment.owner.pk,
+                "course": self.payment.course.pk,
+                "lesson": None,
+            }
+        ]
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(data, result)
@@ -408,26 +408,32 @@ class PaymentTestCase(APITestCase):
         response = self.client.get(url)
         data = response.json()
 
-        result = [{'id': self.payment.pk,
-                   'amount': self.payment.amount,
-                   'payment_method': self.payment.payment_method,
-                   'payment_date': self.payment.payment_date.isoformat(),
-                   'link': self.payment.link,
-                   'session_id': self.payment.session_id,
-                   'status': self.payment.status,
-                   'owner': self.payment.owner.pk,
-                   'course': self.payment.course.pk,
-                   'lesson': None},
-                  {'id': self.payment_2.pk,
-                   'amount': self.payment_2.amount,
-                   'payment_method': self.payment_2.payment_method,
-                   'payment_date': self.payment_2.payment_date.isoformat(),
-                   'link': self.payment_2.link,
-                   'session_id': self.payment_2.session_id,
-                   'status': self.payment_2.status,
-                   'owner': None,
-                   'course': None,
-                   'lesson': self.payment_2.lesson.pk}]
+        result = [
+            {
+                "id": self.payment.pk,
+                "amount": self.payment.amount,
+                "payment_method": self.payment.payment_method,
+                "payment_date": self.payment.payment_date.isoformat(),
+                "link": self.payment.link,
+                "session_id": self.payment.session_id,
+                "status": self.payment.status,
+                "owner": self.payment.owner.pk,
+                "course": self.payment.course.pk,
+                "lesson": None,
+            },
+            {
+                "id": self.payment_2.pk,
+                "amount": self.payment_2.amount,
+                "payment_method": self.payment_2.payment_method,
+                "payment_date": self.payment_2.payment_date.isoformat(),
+                "link": self.payment_2.link,
+                "session_id": self.payment_2.session_id,
+                "status": self.payment_2.status,
+                "owner": None,
+                "course": None,
+                "lesson": self.payment_2.lesson.pk,
+            },
+        ]
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(data, result)

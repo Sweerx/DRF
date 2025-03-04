@@ -9,7 +9,12 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 
 from materials.models import Payment
 from materials.serializers import PaymentSerializer
-from src.utils import check_session_status, create_stripe_price, create_stripe_session, get_queryset_for_owner
+from src.utils import (
+    check_session_status,
+    create_stripe_price,
+    create_stripe_session,
+    get_queryset_for_owner,
+)
 
 from .models import User
 from .permissions import IsCurrentUser, IsModerator, IsOwner
@@ -21,6 +26,7 @@ class UserListCreateAPIView(generics.ListCreateAPIView):
     """
     Дженерик для отображения списка и создания нового объекта User:
     """
+
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
@@ -53,6 +59,7 @@ class UserRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
     """
     Дженерик для просмотра, редактирования и удаления объекта User:
     """
+
     queryset = User.objects.all()
     serializer_class = UserDetailSerializer
 
@@ -79,6 +86,7 @@ class PaymentListCreateAPIView(generics.ListCreateAPIView):
     """
     Дженерик для отображения списка и создания нового объекта Payment:
     """
+
     queryset = Payment.objects.all()
     serializer_class = PaymentSerializer
     filter_backends = [DjangoFilterBackend, OrderingFilter]
@@ -109,6 +117,7 @@ class PaymentRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView)
     """
     Дженерик для просмотра, редактирования и удаления объекта Payment:
     """
+
     queryset = Payment.objects.all()
     serializer_class = PaymentSerializer
 
@@ -137,6 +146,7 @@ class MyToken(TokenObtainPairView):
     """
     Представление для получения токенов авторизации
     """
+
     permission_classes = [AllowAny]
 
     def post(self, request: Request, *args, **kwargs) -> Response:
