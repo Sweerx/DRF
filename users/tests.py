@@ -319,21 +319,21 @@ class PaymentTestCase(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(data, result)
 
-    # def test_payment_create(self):
-    #     """
-    #     Тест создания объекта Payment, автоматического заполнения поля owner и создания платежа в stripe
-    #     """
-    #
-    #     url = reverse("users:payments")
-    #     data = {"amount": 10000, "payment_method": "cash", "lesson": self.lesson.pk}
-    #     response = self.client.post(url, data)
-    #
-    #     self.assertEqual(response.status_code, status.HTTP_201_CREATED)
-    #     self.assertEqual(response.json()["owner"], self.user.pk)
-    #     self.assertTrue(
-    #         all([response.json().get("link"), response.json().get("session_id")])
-    #     )
-    #     self.assertEqual(Payment.objects.all().count(), 3)
+    def test_payment_create(self):
+        """
+        Тест создания объекта Payment, автоматического заполнения поля owner и создания платежа в stripe
+        """
+
+        url = reverse("users:payments")
+        data = {"amount": 10000, "payment_method": "cash", "lesson": self.lesson.pk}
+        response = self.client.post(url, data)
+
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        self.assertEqual(response.json()["owner"], self.user.pk)
+        self.assertTrue(
+            all([response.json().get("link"), response.json().get("session_id")])
+        )
+        self.assertEqual(Payment.objects.all().count(), 3)
 
     def test_payment_update(self):
         """
